@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Warm Spice & Organic Trust System (Light Theme) */
+  --primary: #d65219;
+  --primary-hover: #b84310;
+  --primary-light: rgba(214, 82, 25, 0.08);
+  --secondary: #275438;
+  --secondary-hover: #1c3d28;
+  --secondary-light: rgba(39, 84, 56, 0.08);
+  --accent: #e59a18;
+  
+  --bg-main: #f9f7f4;
+  --bg-card: #ffffff;
+  --bg-input: #f4f1eb;
+  
+  --text-main: #2d2926;
+  --text-muted: #726c67;
+  --text-light: #faf8f5;
+  
+  --border-color: rgba(45, 41, 38, 0.08);
+  --border-focus: rgba(214, 82, 25, 0.4);
+  
+  --shadow-sm: 0 2px 8px rgba(45, 41, 38, 0.04);
+  --shadow-md: 0 8px 20px rgba(45, 41, 38, 0.06);
+  --shadow-lg: 0 12px 32px rgba(45, 41, 38, 0.12);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #eae6df; /* Darker background to highlight the phone mockup */
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Desktop Emulator & Mobile Responsive Wrapper */
+.app-container {
+  width: 100%;
+  max-width: 480px; /* Phone format */
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 76px; /* Offset for BottomNav */
+}
+
+@media (max-width: 480px) {
+  body {
+    background-color: var(--bg-main);
+  }
+  .app-container {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #1a1614;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-input);
+  border-radius: var(--radius-full);
+}
+
+/* Containers & Grid */
+.container {
+  padding: 0 20px;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+/* Mobile-first compact double columns */
+.grid-cols-2 { 
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+.flex { display: flex; }
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Bottom Navigation Bar Styles */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 90;
+  padding-bottom: 6px; /* Safe area space */
+}
+
+@media (max-width: 480px) {
+  .bottom-nav {
+    left: 0;
+    transform: none;
+    max-width: 100%;
+  }
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: var(--transition);
+  flex-grow: 1;
+  height: 100%;
+}
+
+.nav-item-active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Native-feeling Bottom Sheets */
+.bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(45, 41, 38, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.bottom-sheet {
+  background-color: var(--bg-card);
+  border-radius: 28px 28px 0 0;
+  box-shadow: 0 -8px 32px rgba(45, 41, 38, 0.1);
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  padding: 24px 20px 40px;
+}
+
+.bottom-sheet-handle {
+  width: 44px;
+  height: 5px;
+  background-color: var(--bg-input);
+  border-radius: var(--radius-full);
+  margin: -12px auto 20px;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.95rem;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+  box-shadow: 0 4px 12px rgba(214, 82, 25, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--text-light);
+  box-shadow: 0 4px 12px rgba(39, 84, 56, 0.15);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: rgba(45, 41, 38, 0.02);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-pickle {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.badge-snack {
+  background-color: var(--secondary-light);
+  color: var(--secondary);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  color: var(--text-muted);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  background-color: var(--bg-card);
+}
+
+.form-select {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23726c67' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  transition: var(--transition);
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+  background-color: var(--bg-card);
+}
+
+/* Toast Messages */
+.toast-container {
+  position: fixed;
+  bottom: 84px; /* Offset above BottomNav */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  width: 90%;
+  max-width: 400px;
+}
+
+.toast {
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-lg);
+  animation: slideUpToast 0.25s ease-out;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-success {
+  background-color: var(--secondary);
+  color: var(--text-light);
+}
+
+.toast-error {
+  background-color: #c22929;
+  color: var(--text-light);
+}
+
+@keyframes slideUpToast {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
