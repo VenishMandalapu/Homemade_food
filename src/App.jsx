@@ -210,8 +210,47 @@ export default function App() {
 
   return (
     <div className="app-container">
+      {/* Global Header Logo & Brand */}
+      <header style={{
+        textAlign: 'center',
+        padding: '16px 20px 8px',
+        borderBottom: '1px solid var(--border-color)',
+        backgroundColor: 'var(--bg-card)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}>
+        {/* SVG Logo: Pickle Jar & Snack Packet */}
+        <svg viewBox="0 0 100 60" width="70" height="42" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginBottom: '6px' }}>
+          {/* Pickle Jar (Left) */}
+          <rect x="25" y="10" width="22" height="5" rx="1.5" fill="var(--primary)" />
+          <rect x="28" y="15" width="16" height="3" fill="var(--accent)" />
+          <path d="M22 19C22 18 23 17 24 17H48C49 17 50 18 50 19V45C50 48 48 50 45 50H27C24 50 22 48 22 45V19Z" fill="rgba(39, 84, 56, 0.05)" stroke="var(--secondary)" stroke-width="2" />
+          <circle cx="31" cy="28" r="3" fill="var(--secondary)" opacity="0.7" />
+          <circle cx="41" cy="34" r="3" fill="var(--secondary)" opacity="0.7" />
+          <circle cx="33" cy="40" r="3" fill="var(--secondary)" opacity="0.7" />
+          <rect x="28" y="24" width="16" height="11" rx="1" fill="var(--bg-card)" stroke="var(--primary)" stroke-width="1" />
+          <line x1="31" y1="30" x2="41" y2="30" stroke="var(--primary)" stroke-width="1" />
+          
+          {/* Snack Packet (Right) */}
+          <path d="M56 12L78 15V47L56 44V12Z" fill="rgba(214, 82, 25, 0.05)" stroke="var(--primary)" stroke-width="2" stroke-linejoin="round" />
+          <path d="M56 12L78 15" stroke="var(--primary)" stroke-width="2" />
+          <path d="M56 44L78 47" stroke="var(--primary)" stroke-width="2" />
+          <polygon points="60,22 74,24 72,34 58,32" fill="var(--accent)" stroke="var(--primary)" stroke-width="1" />
+          <circle cx="67" cy="38" r="1.5" fill="var(--accent)" />
+          <circle cx="71" cy="39" r="1" fill="var(--accent)" />
+        </svg>
+
+        <h1 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--primary)', fontFamily: "'Playfair Display', serif", letterSpacing: '-0.01em' }}>
+          Homemade
+        </h1>
+        <p style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.12em', marginTop: '2px', fontWeight: 600 }}>
+          Sun-Matured Pickles & Crunchy Snacks
+        </p>
+      </header>
+
       {/* Dynamic Content Frame */}
-      <div style={{ flexGrow: 1, paddingTop: '10px' }}>
+      <div style={{ flexGrow: 1, paddingTop: '16px' }}>
         {renderView()}
       </div>
 

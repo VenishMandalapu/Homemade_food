@@ -76,7 +76,7 @@ export default function Hero({ onExplore }) {
           marginBottom: '32px',
           lineHeight: 1.7
         }}>
-          Indulge in our collection of slow-matured, traditional grandma-style pickles and crispy, hand-rolled savory snacks. Made in small batches using local ingredients and cold-pressed oils.
+          Indulge in our collection of slow-matured, traditional home-style pickles and crispy, hand-rolled savory snacks. Made in small batches using local ingredients and cold-pressed oils.
         </p>
 
         {/* Trust Badges & Buttons */}

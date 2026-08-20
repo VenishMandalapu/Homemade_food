@@ -31,6 +31,21 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/reviews', reviewRoutes);
 
+// Root API info endpoint
+app.get('/api', (req, res) => {
+  res.json({
+    status: 'healthy',
+    message: 'Home Made Foods API is running',
+    endpoints: {
+      auth: '/api/auth',
+      products: '/api/products',
+      orders: '/api/orders',
+      reviews: '/api/reviews',
+      health: '/api/health'
+    }
+  });
+});
+
 // Simple health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'healthy', timestamp: new Date() });

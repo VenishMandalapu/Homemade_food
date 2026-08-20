@@ -51,15 +51,7 @@ export default function Catalog({ onAddToCart, setSelectedProduct, showToast }) 
 
   return (
     <div className="container">
-      {/* Brand Header */}
-      <div style={{ textAlign: 'center', margin: '12px 0 20px' }}>
-        <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary)' }}>
-          PikSnax Homemade
-        </div>
-        <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
-          Grandma's Traditional Recipes
-        </p>
-      </div>
+
 
       {/* Trust Card deck */}
       <TrustBadges />
@@ -186,9 +178,9 @@ export default function Catalog({ onAddToCart, setSelectedProduct, showToast }) 
         alignItems: 'center',
         gap: '12px'
       }}>
-        <span style={{ fontSize: '1.8rem' }}>👵🏽</span>
+        <span style={{ fontSize: '1.8rem' }}>🏡</span>
         <div>
-          <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--secondary)' }}>Prepared by Grandma</h4>
+          <h4 style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--secondary)' }}>Prepared in Home Kitchens</h4>
           <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', lineHeight: 1.3 }}>
             Cooked in clean local home-kitchens using natural sun-matured processes.
           </p>

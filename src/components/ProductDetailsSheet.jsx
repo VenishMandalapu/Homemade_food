@@ -157,7 +157,7 @@ export default function ProductDetailsSheet({ product, onClose, onAddToCart, sho
               style={{ height: '40px', fontSize: '0.85rem', padding: '8px 12px' }}
             >
               <option value="Mild">Mild (Milder taste)</option>
-              <option value="Medium">Medium (Grandma's standard recipe)</option>
+              <option value="Medium">Medium (Traditional recipe)</option>
               <option value="Extra Hot">Extra Hot (Extra chili kick 🌶️)</option>
             </select>
           </div>

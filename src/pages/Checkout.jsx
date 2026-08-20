@@ -152,7 +152,7 @@ export default function Checkout({ user, cart, clearCart, setView, showToast }) 
             lineHeight: 1.3
           }}>
             <strong style={{ color: 'var(--secondary)' }}>FSSAI license No. 22424001000853</strong>
-            <div>This invoice is generated from grandma's kitchen registry. Keep this receipt for return guarantees.</div>
+            <div>This invoice is generated from our kitchen registry. Keep this receipt for return guarantees.</div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
