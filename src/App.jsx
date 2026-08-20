@@ -220,29 +220,39 @@ export default function App() {
         flexDirection: 'column',
         alignItems: 'center'
       }}>
-        {/* SVG Logo: Pickle Jar & Snack Packet */}
-        <svg viewBox="0 0 100 60" width="70" height="42" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginBottom: '6px' }}>
-          {/* Pickle Jar (Left) */}
-          <rect x="25" y="10" width="22" height="5" rx="1.5" fill="var(--primary)" />
-          <rect x="28" y="15" width="16" height="3" fill="var(--accent)" />
-          <path d="M22 19C22 18 23 17 24 17H48C49 17 50 18 50 19V45C50 48 48 50 45 50H27C24 50 22 48 22 45V19Z" fill="rgba(39, 84, 56, 0.05)" stroke="var(--secondary)" stroke-width="2" />
-          <circle cx="31" cy="28" r="3" fill="var(--secondary)" opacity="0.7" />
-          <circle cx="41" cy="34" r="3" fill="var(--secondary)" opacity="0.7" />
-          <circle cx="33" cy="40" r="3" fill="var(--secondary)" opacity="0.7" />
-          <rect x="28" y="24" width="16" height="11" rx="1" fill="var(--bg-card)" stroke="var(--primary)" stroke-width="1" />
-          <line x1="31" y1="30" x2="41" y2="30" stroke="var(--primary)" stroke-width="1" />
-          
-          {/* Snack Packet (Right) */}
-          <path d="M56 12L78 15V47L56 44V12Z" fill="rgba(214, 82, 25, 0.05)" stroke="var(--primary)" stroke-width="2" stroke-linejoin="round" />
-          <path d="M56 12L78 15" stroke="var(--primary)" stroke-width="2" />
-          <path d="M56 44L78 47" stroke="var(--primary)" stroke-width="2" />
-          <polygon points="60,22 74,24 72,34 58,32" fill="var(--accent)" stroke="var(--primary)" stroke-width="1" />
-          <circle cx="67" cy="38" r="1.5" fill="var(--accent)" />
-          <circle cx="71" cy="39" r="1" fill="var(--accent)" />
+        {/* SVG Logo: Pickle Jar & Snack Packet inside a Wicker Basket */}
+        <svg viewBox="0 0 100 65" width="80" height="52" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginBottom: '6px' }}>
+          {/* Basket Handle */}
+          <path d="M22 40 C22 14, 78 14, 78 40" fill="none" stroke="#b0693a" stroke-width="2.5" stroke-linecap="round" />
+
+          {/* Pickle Jar (Left, placed inside basket) */}
+          <rect x="27" y="22" width="18" height="4" rx="1" fill="var(--primary)" />
+          <rect x="30" y="26" width="12" height="2" fill="var(--accent)" />
+          <path d="M24 28C24 27 25 26 26 26H46C47 26 48 27 48 28V46C48 48 46 50 44 50H28C26 50 24 48 24 46V28Z" fill="var(--bg-card)" stroke="var(--secondary)" stroke-width="2" />
+          <circle cx="31" cy="34" r="2.5" fill="var(--secondary)" opacity="0.6" />
+          <circle cx="41" cy="39" r="2.5" fill="var(--secondary)" opacity="0.6" />
+          <rect x="29" y="32" width="14" height="10" rx="0.5" fill="var(--bg-card)" stroke="var(--primary)" stroke-width="0.8" />
+          <line x1="32" y1="37" x2="40" y2="37" stroke="var(--primary)" stroke-width="0.8" />
+
+          {/* Snack Packet (Right, slightly tilted, inside basket) */}
+          <g transform="rotate(12 62 25)">
+            <path d="M52 20L74 22V46L52 44V20Z" fill="var(--bg-card)" stroke="var(--primary)" stroke-width="2" stroke-linejoin="round" />
+            <path d="M52 20L74 22" stroke="var(--primary)" stroke-width="2" />
+            <path d="M52 44L74 46" stroke="var(--primary)" stroke-width="2" />
+            <polygon points="56,28 70,30 68,38 54,36" fill="var(--accent)" stroke="var(--primary)" stroke-width="0.8" />
+            <circle cx="63" cy="40" r="1" fill="var(--accent)" />
+          </g>
+
+          {/* Basket Front Wall (covers the bottom of jar and pack) */}
+          <path d="M18 40L28 58H72L82 40Z" fill="var(--bg-card)" stroke="#b0693a" stroke-width="2.5" stroke-linejoin="round" />
+          {/* Wicker Weave Texture */}
+          <path d="M21 45H79" stroke="#b0693a" stroke-width="1" stroke-dasharray="5 3" />
+          <path d="M25 51H75" stroke="#b0693a" stroke-width="1" stroke-dasharray="5 3" />
+          <path d="M29 57H71" stroke="#b0693a" stroke-width="1" stroke-dasharray="5 3" />
         </svg>
 
         <h1 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--primary)', fontFamily: "'Playfair Display', serif", letterSpacing: '-0.01em' }}>
-          Homemade
+          Homemadebasket
         </h1>
         <p style={{ fontSize: '0.65rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.12em', marginTop: '2px', fontWeight: 600 }}>
           Sun-Matured Pickles & Crunchy Snacks
