@@ -80,32 +80,32 @@ export default function Auth({ onLoginSuccess, setView, showToast }) {
         <div style={{ textAlign: 'center', marginBottom: '20px' }}>
           <svg viewBox="0 0 100 65" width="70" height="46" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginBottom: '6px' }}>
             {/* Basket Handle */}
-            <path d="M22 40 C22 14, 78 14, 78 40" fill="none" stroke="#b0693a" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M22 40 C22 14, 78 14, 78 40" fill="none" stroke="#b0693a" strokeWidth="2.5" strokeLinecap="round" />
 
             {/* Pickle Jar (Left, placed inside basket) */}
             <rect x="27" y="22" width="18" height="4" rx="1" fill="var(--primary)" />
             <rect x="30" y="26" width="12" height="2" fill="var(--accent)" />
-            <path d="M24 28C24 27 25 26 26 26H46C47 26 48 27 48 28V46C48 48 46 50 44 50H28C26 50 24 48 24 46V28Z" fill="var(--bg-card)" stroke="var(--secondary)" stroke-width="2" />
+            <path d="M24 28C24 27 25 26 26 26H46C47 26 48 27 48 28V46C48 48 46 50 44 50H28C26 50 24 48 24 46V28Z" fill="var(--bg-card)" stroke="var(--secondary)" strokeWidth="2" />
             <circle cx="31" cy="34" r="2.5" fill="var(--secondary)" opacity="0.6" />
             <circle cx="41" cy="39" r="2.5" fill="var(--secondary)" opacity="0.6" />
-            <rect x="29" y="32" width="14" height="10" rx="0.5" fill="var(--bg-card)" stroke="var(--primary)" stroke-width="0.8" />
-            <line x1="32" y1="37" x2="40" y2="37" stroke="var(--primary)" stroke-width="0.8" />
+            <rect x="29" y="32" width="14" height="10" rx="0.5" fill="var(--bg-card)" stroke="var(--primary)" strokeWidth="0.8" />
+            <line x1="32" y1="37" x2="40" y2="37" stroke="var(--primary)" strokeWidth="0.8" />
 
             {/* Snack Packet (Right, slightly tilted, inside basket) */}
             <g transform="rotate(12 62 25)">
-              <path d="M52 20L74 22V46L52 44V20Z" fill="var(--bg-card)" stroke="var(--primary)" stroke-width="2" stroke-linejoin="round" />
-              <path d="M52 20L74 22" stroke="var(--primary)" stroke-width="2" />
+              <path d="M52 20L74 22V46L52 44V20Z" fill="var(--bg-card)" stroke="var(--primary)" strokeWidth="2" strokeLinejoin="round" />
+              <path d="M52 20L74 22" stroke="var(--primary)" strokeWidth="2" />
               <path d="M52 44L74 46" stroke="var(--primary)" stroke-width="2" />
-              <polygon points="56,28 70,30 68,38 54,36" fill="var(--accent)" stroke="var(--primary)" stroke-width="0.8" />
+              <polygon points="56,28 70,30 68,38 54,36" fill="var(--accent)" stroke="var(--primary)" strokeWidth="0.8" />
               <circle cx="63" cy="40" r="1" fill="var(--accent)" />
             </g>
 
             {/* Basket Front Wall (covers the bottom of jar and pack) */}
-            <path d="M18 40L28 58H72L82 40Z" fill="var(--bg-card)" stroke="#b0693a" stroke-width="2.5" stroke-linejoin="round" />
+            <path d="M18 40L28 58H72L82 40Z" fill="var(--bg-card)" stroke="#b0693a" strokeWidth="2.5" strokeLinejoin="round" />
             {/* Wicker Weave Texture */}
-            <path d="M21 45H79" stroke="#b0693a" stroke-width="1" stroke-dasharray="5 3" />
-            <path d="M25 51H75" stroke="#b0693a" stroke-width="1" stroke-dasharray="5 3" />
-            <path d="M29 57H71" stroke="#b0693a" stroke-width="1" stroke-dasharray="5 3" />
+            <path d="M21 45H79" stroke="#b0693a" strokeWidth="1" strokeDasharray="5 3" />
+            <path d="M25 51H75" stroke="#b0693a" strokeWidth="1" strokeDasharray="5 3" />
+            <path d="M29 57H71" stroke="#b0693a" strokeWidth="1" strokeDasharray="5 3" />
           </svg>
           <h3 style={{ fontSize: '1.25rem', marginTop: '6px', fontFamily: "'Playfair Display', serif" }}>
             {isLogin ? 'Homemadebasket Access' : 'Create Account'}
