@@ -1,4 +1,17 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
+
+export const getImageUrl = (url) => {
+  if (!url) return '';
+  if (url.startsWith('http') || url.startsWith('https')) return url;
+  if (url.startsWith('/uploads')) {
+    // If VITE_API_URL is configured, extract the backend base origin
+    const backendBase = import.meta.env.VITE_API_URL 
+      ? import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '') 
+      : '';
+    return `${backendBase}${url}`;
+  }
+  return url; // Serves /images/... locally from public directory
+};
 
 async function request(endpoint, options = {}) {
   const token = localStorage.getItem('token');

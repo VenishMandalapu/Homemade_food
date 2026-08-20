@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flame, Star, Plus, Shield } from 'lucide-react';
+import { getImageUrl } from '../api';
 
 export default function ProductCard({ product, onAddToCart, onClick }) {
   const { name, price, category, spice_level, stock, image_url } = product;
@@ -39,7 +40,7 @@ export default function ProductCard({ product, onAddToCart, onClick }) {
       {/* Aspect Ratio Image Wrapper */}
       <div style={{ position: 'relative', width: '100%', paddingTop: '90%', overflow: 'hidden', backgroundColor: '#eae6df' }}>
         <img 
-          src={image_url} 
+          src={getImageUrl(image_url)} 
           alt={name} 
           style={{
             position: 'absolute',

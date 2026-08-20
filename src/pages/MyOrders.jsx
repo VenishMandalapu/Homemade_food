@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../api';
+import { api, getImageUrl } from '../api';
 import { ShoppingBag, Calendar, LogOut, User } from 'lucide-react';
 
 export default function MyOrders({ user, setView, showToast, onLogout }) {
@@ -158,7 +158,7 @@ export default function MyOrders({ user, setView, showToast, onLogout }) {
                 {order.items && order.items.map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
                     <img 
-                      src={item.image_url} 
+                      src={getImageUrl(item.image_url)} 
                       alt={item.product_name} 
                       style={{ width: '36px', height: '36px', borderRadius: '4px', objectFit: 'cover', border: '1px solid var(--border-color)' }}
                       onError={(e) => {

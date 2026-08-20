@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Flame, Calendar, ShoppingBag, ShieldCheck } from 'lucide-react';
 import ReviewSection from './ReviewSection';
+import { getImageUrl } from '../api';
 
 export default function ProductDetailsSheet({ product, onClose, onAddToCart, showToast }) {
   const [quantity, setQuantity] = useState(1);
@@ -75,7 +76,7 @@ export default function ProductDetailsSheet({ product, onClose, onAddToCart, sho
           border: '1px solid var(--border-color)'
         }}>
           <img 
-            src={image_url} 
+            src={getImageUrl(image_url)} 
             alt={name} 
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             onError={(e) => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
+import { getImageUrl } from '../api';
 
 export default function CartSheet({ isOpen, onClose, cart, onUpdateQuantity, onRemoveItem, setView }) {
   if (!isOpen) return null;
@@ -86,7 +87,7 @@ export default function CartSheet({ isOpen, onClose, cart, onUpdateQuantity, onR
                   flexShrink: 0
                 }}>
                   <img 
-                    src={item.product.image_url} 
+                    src={getImageUrl(item.product.image_url)} 
                     alt={item.product.name} 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     onError={(e) => {

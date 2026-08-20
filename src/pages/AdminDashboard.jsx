@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../api';
+import { api, getImageUrl } from '../api';
 import { 
   Package, DollarSign, ShoppingBag, AlertTriangle, 
   PlusCircle, Trash2, Edit3, X, Check, ArrowRight
@@ -310,7 +310,7 @@ export default function AdminDashboard({ showToast }) {
             products.map((p) => (
               <div key={p.id} className="glass-panel" style={{ padding: '12px', borderRadius: '12px', backgroundColor: 'var(--bg-card)', border: '1px solid var(--border-color)', display: 'flex', gap: '12px', alignItems: 'center' }}>
                 <img 
-                  src={p.image_url} 
+                  src={getImageUrl(p.image_url)} 
                   alt={p.name} 
                   style={{ width: '48px', height: '48px', borderRadius: '8px', objectFit: 'cover' }}
                   onError={(e) => {
